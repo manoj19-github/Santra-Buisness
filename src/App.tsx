@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { ColorModeContext, tokens, useMode } from "./theme";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./pages/dashboard/global/Topbar";
@@ -13,6 +13,7 @@ import { Routes, Route } from "react-router-dom";
 // import Bar from "./pages/bar";
 
 function App() {
+  const [isSidebar, setIsSidebar] = useState<boolean>(true);
   const [theme, colorMode] = useMode();
   const Team = lazy(() => import("./pages/team"));
   const Invoices = lazy(() => import("./pages/invoices"));
@@ -31,8 +32,10 @@ function App() {
       <ThemeProvider theme={theme as any}>
         <CssBaseline />
         <div className="app">
+          <Sidebar />
           <main className="content">
             <Topbar />
+
             <Suspense>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
