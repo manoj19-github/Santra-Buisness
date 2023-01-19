@@ -1,8 +1,8 @@
 import React, { lazy, Suspense, useState } from "react";
 import { ColorModeContext, tokens, useMode } from "./theme";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
-import Topbar from "./pages/dashboard/global/Topbar";
-import Sidebar from "./pages/dashboard/global/Sidebar";
+import Topbar from "./components/global/Topbar";
+import Sidebar from "./components/global/Sidebar";
 import { Routes, Route } from "react-router-dom";
 // import Team from "./pages/team";
 // import Invoices from "./pages/invoices";

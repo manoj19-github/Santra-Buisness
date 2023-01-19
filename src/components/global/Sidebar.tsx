@@ -3,7 +3,7 @@ import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
-import { tokens } from "../../../theme";
+import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -49,8 +49,8 @@ const Item = ({
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selected, setSelected] = useState("Dashboard");
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>("Dashboard");
 
   return (
     <Box
@@ -83,7 +83,7 @@ const Sidebar = () => {
               color: colors.grey[100],
             }}
           >
-            {!isCollapsed && (
+            {!isCollapsed ? (
               <Box
                 display="flex"
                 justifyContent="space-between"
@@ -97,10 +97,12 @@ const Sidebar = () => {
                   <MenuOutlinedIcon />
                 </IconButton>
               </Box>
+            ) : (
+              <></>
             )}
           </MenuItem>
 
-          {!isCollapsed && (
+          {!isCollapsed ? (
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
@@ -125,6 +127,8 @@ const Sidebar = () => {
                 </Typography>
               </Box>
             </Box>
+          ) : (
+            <></>
           )}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
