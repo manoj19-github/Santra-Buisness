@@ -3,10 +3,10 @@ import { IMockDataTeam } from "../interfaces/mockData.interface";
 export const mockDataTeam: IMockDataTeam[] = [
   {
     id: 1,
-    name: "Jon Snow",
-    email: "jonsnow@gmail.com",
+    name: "Samrat Choudhuri",
+    email: "samrat@gmail.com",
     age: 35,
-    phone: "(665)121-5454",
+    phone: "98041499087",
     access: "admin",
   },
   {
@@ -45,7 +45,7 @@ export const mockDataTeam: IMockDataTeam[] = [
     id: 6,
     name: "Ever Melisandre",
     email: "evermelisandre@gmail.com",
-    age: 150,
+    age: 50,
     phone: "(232)545-6483",
     access: "manager",
   },
